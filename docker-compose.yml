@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: churn-prediction-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./config:/app/config
+    environment:
+      - MODEL_PATH=/app/models/xgboost_model.pkl
+      - PREPROCESSING_PATH=/app/models/preprocessor.pkl
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    networks:
+      - churn-network
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.10.0
+    container_name: churn-mlflow
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+      - ./mlartifacts:/mlflow/mlartifacts
+    command: mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri sqlite:///mlflow/mlruns.db --default-artifact-root /mlflow/mlartifacts
+    networks:
+      - churn-network
+
+networks:
+  churn-network:
+    driver: bridge
