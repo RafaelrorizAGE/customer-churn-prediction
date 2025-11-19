@@ -357,13 +357,13 @@ Customer Churn Research Paper
 Este projeto está sob a licença Public GNU. Veja o arquivo LICENSE para mais detalhes.
 
 👤 Autor
-Seu Nome
+Rafael Roriz
 
-GitHub: @seu-usuario
+GitHub: @RafaelrorizAGE
 
-LinkedIn: Seu Nome
+LinkedIn: Rafael Roriz de Menezes
 
-Email: seu.email@exemplo.com
+Email: rroriz111@gmail.com
 
 🙏 Agradecimentos
 Comunidade Kaggle pelos datasets
