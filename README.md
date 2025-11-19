@@ -79,7 +79,7 @@ open http://localhost:8000/docs
 Instalação Local
 bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/customer-churn-prediction.git
+git clone https://github.com/RafaelrorizAGE/customer-churn-prediction.git
 cd customer-churn-prediction
 
 # Crie ambiente virtual
